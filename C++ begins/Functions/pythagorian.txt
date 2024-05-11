@@ -1,0 +1,68 @@
+//pythagorian triplet is set of three numbers that satisfies pythagorous theorem
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+long int pythagorian(int x,int y,int z)
+{
+if(pow(x,2)+pow(y,2)==pow(z,2))
+{
+    cout<<"The given set of number is A PYTHAGORIAN TRIPLET.";
+
+}
+else
+{
+    cout<<"The given set of number is NOT A PYTHAGORIAN TRIPLET.";
+}
+return 0;
+}
+
+int main()
+{
+
+    int a,b,c;
+    int p,q,r;
+    cout<<"Enter three set of numbers to check pythagorian triplet : ";
+    cin>>a>>b>>c;
+
+    if(a<b&&a<c)
+    {
+        p=a;
+        if(b<c)
+        {
+            q=b;
+            r=c;
+        }
+        else{
+            q=c;
+            r=b;
+        }
+    }
+    if(c<b&&c<a)
+    {
+        p=c;
+        if(b<a)
+        {
+            q=b;
+            r=a;
+        }
+        else{
+            q=a;
+            r=b;
+        }
+    }
+    else
+    {
+        p=b;
+        if(a<c)
+        {
+            q=a;
+            r=c;
+        }
+        else{
+            q=c;
+            r=a;
+        }
+    }
+    pythagorian(p,q,r);
+}
